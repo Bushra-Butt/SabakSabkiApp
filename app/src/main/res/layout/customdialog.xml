@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="97dp"
+        android:layout_height="93dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_round_recent_actors_24" />
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="394dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="Add Today Record: "
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <RelativeLayout
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heading">
+        >
+
+        <TextView
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:ems="10"
+            android:gravity=""
+            android:inputType="textPersonName"
+            android:text="Name of Student: " />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Sabak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Name">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewSabak"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="SABAK PARA" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewSabki"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@id/autoCompleteTextViewSabak"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="SABAKI PARA" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ManzilandStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Sabak">
+        <AutoCompleteTextView
+            android:id="@+id/ManzilAuto"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="MANZIL NO" />
+
+        <AutoCompleteTextView
+            android:id="@+id/statusAuto"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@id/ManzilAuto"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="Status MANZIL" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ManzilandStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:id="@+id/okay_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="100dp"
+            android:text="Okay"
+            android:textColor="#3F51B5"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cancel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="100dp"
+            android:layout_toRightOf="@id/okay_text"
+            android:text="Cancel"
+            android:textColor="#FF0000"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

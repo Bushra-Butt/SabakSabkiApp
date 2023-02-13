@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/SabkiNumber"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="139dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Statusofmanzil"
+        app:layout_constraintStart_toEndOf="@+id/SabakNumber" />
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/SabakNumber"
+        app:layout_constraintStart_toStartOf="@+id/SabakNumber" />
+
+    <EditText
+        android:id="@+id/SabakNumber"
+        android:layout_width="135dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginEnd="46dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/SabkiNumber"
+        app:layout_constraintEnd_toStartOf="@+id/cancelbutton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/SabkiNumber" />
+
+    <EditText
+        android:id="@+id/manzilno"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/Statusofmanzil"
+        app:layout_constraintEnd_toEndOf="@+id/SabakNumber"
+        app:layout_constraintStart_toStartOf="@+id/SabakNumber"
+        app:layout_constraintTop_toTopOf="@+id/Statusofmanzil" />
+
+    <EditText
+        android:id="@+id/Statusofmanzil"
+        android:layout_width="132dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginBottom="42dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=" "
+        app:layout_constraintBottom_toTopOf="@+id/addbutton"
+        app:layout_constraintStart_toEndOf="@+id/SabakNumber"
+        app:layout_constraintTop_toTopOf="@+id/SabkiNumber" />
+
+    <Button
+        android:id="@+id/addbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="121dp"
+        android:text="Add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/cancelbutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:text="cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addbutton" />
+</androidx.constraintlayout.widget.ConstraintLayout>
