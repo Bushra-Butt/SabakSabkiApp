@@ -34,7 +34,10 @@ public class StudentRVAdapter extends RecyclerView.Adapter<StudentRVAdapter.Stud
                 .inflate(R.layout.singlerecord, parent, false);
         return new StudentRVAdapter.StudentVH(itemView);
     }
-
+    public void addItem(DailyDiary item) {
+        DList.add(item);
+        notifyDataSetChanged();
+    }
     @Override
     public void onBindViewHolder(@NonNull StudentVH holder, int position) {
         if(!DList.isEmpty()) {
@@ -58,7 +61,7 @@ public class StudentRVAdapter extends RecyclerView.Adapter<StudentRVAdapter.Stud
         Button add, addStudent, cancelButton, AddButton;
         DailyDiary data;
         TextView okay_text, cancel_text;
-        RecyclerView.Adapter adapter;
+//        RecyclerView.Adapter adapter;
         RecyclerView recyclerView;
         AutoCompleteTextView autoCompleteTextViewSabak, autoCompleteTextViewSabki, autoCompleteTextViewManzil, autoCompleteTextViewStatus;
         public StudentVH(@NonNull View itemView) {
@@ -142,7 +145,9 @@ public class StudentRVAdapter extends RecyclerView.Adapter<StudentRVAdapter.Stud
                             String[] name=nameofdtudent.getText().toString().split(":");
                             dailyDiary.setStName(name[1]);
                             controller.AddStudentintoDiary(dailyDiary);
-                            adapter.notifyDataSetChanged();
+                            addItem(dailyDiary);
+//                            adapter.notifyDataSetChanged();
+
                             Toast.makeText(view.getContext(), "okay clicked", Toast.LENGTH_SHORT).show();
 //                            recyclerView.setLayoutManager(new LinearLayoutManager(this));
 //                            adapter=new StudentRVAdapter(DateList);

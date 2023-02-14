@@ -13,6 +13,7 @@
         android:layout_marginBottom="139dp"
         android:ems="10"
         android:inputType="number"
+        android:hint="Sabki"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Statusofmanzil"
         app:layout_constraintStart_toEndOf="@+id/SabakNumber" />
@@ -26,6 +27,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
+        android:hint="Student Name"
         app:layout_constraintBottom_toTopOf="@+id/SabakNumber"
         app:layout_constraintStart_toStartOf="@+id/SabakNumber" />
 
@@ -37,6 +39,7 @@
         android:layout_marginEnd="46dp"
         android:ems="10"
         android:inputType="number"
+        android:hint="Sabak"
         app:layout_constraintBottom_toBottomOf="@+id/SabkiNumber"
         app:layout_constraintEnd_toStartOf="@+id/cancelbutton2"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +51,7 @@
         android:layout_height="0dp"
         android:ems="10"
         android:inputType="number"
+        android:hint="Manzil"
         app:layout_constraintBottom_toBottomOf="@+id/Statusofmanzil"
         app:layout_constraintEnd_toEndOf="@+id/SabakNumber"
         app:layout_constraintStart_toStartOf="@+id/SabakNumber"
@@ -61,6 +65,7 @@
         android:layout_marginTop="49dp"
         android:layout_marginBottom="42dp"
         android:ems="10"
+        android:hint="Status"
         android:inputType="textPersonName"
         android:text=" "
         app:layout_constraintBottom_toTopOf="@+id/addbutton"
