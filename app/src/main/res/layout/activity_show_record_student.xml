@@ -4,40 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".showRecordStudent">
+    android:background="@drawable/gyg"
+    tools:context=".showRecordStudent"
+    >
 
     <Button
         android:id="@+id/addStudents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginEnd="27dp"
         android:text="Add Student"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerViewS"
-        app:layout_constraintStart_toStartOf="@+id/recyclerViewS"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+
+        app:layout_constraintBaseline_toBaselineOf="@+id/searchByName"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewS"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingBottom="7dp"
+        android:layout_marginTop="80dp"
+        android:paddingBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addStudents" />
 
-    <TextView
-        android:id="@+id/textView4"
+    <Button
+        android:id="@+id/searchByName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginBottom="24dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/addStudents"
-        app:layout_constraintStart_toStartOf="@+id/addStudents"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="18dp"
+        android:text="Search By Name"
+
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewS"
+        app:layout_constraintEnd_toStartOf="@+id/addStudents"
         app:layout_constraintTop_toTopOf="parent" />
 
 

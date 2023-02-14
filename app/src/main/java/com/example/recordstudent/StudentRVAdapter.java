@@ -37,17 +37,19 @@ public class StudentRVAdapter extends RecyclerView.Adapter<StudentRVAdapter.Stud
     public void addItem(DailyDiary item) {
         DList.add(item);
         notifyDataSetChanged();
+//        recyclerView.setLayoutManager(new LinearLayoutManager(StudentRVAdapter.StudentVH));
+        new StudentRVAdapter(DList);
     }
     @Override
     public void onBindViewHolder(@NonNull StudentVH holder, int position) {
         if(!DList.isEmpty()) {
             holder.data = DList.get(position);
-            holder.name.setText("Student:" + holder.data.getStName());
-            holder.manzil.setText("Manzil" + holder.data.getManzilNo());
-            holder.sabak.setText("Sabak" + holder.data.getSabakNo());
-            holder.sabki.setText("Sabki" + holder.data.getSabkiNo());
+            holder.name.setText("Student: " + holder.data.getStName());
+            holder.manzil.setText("Manzil: " + holder.data.getManzilNo());
+            holder.sabak.setText("Sabak: " + holder.data.getSabakNo());
+            holder.sabki.setText("Sabki: " + holder.data.getSabkiNo());
             holder.status.setText("Status:" + holder.data.isStatusofManzil());
-            holder.date.setText("Date:" + holder.data.getDate());
+            holder.date.setText("Date: " + holder.data.getDate());
         }
     }
 
@@ -82,7 +84,7 @@ public class StudentRVAdapter extends RecyclerView.Adapter<StudentRVAdapter.Stud
                 @Override
                 public void onClick(View view) {
                     dialog.setContentView(R.layout.customdialog);
-                    String[] arr = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+                    String[] arr = {"","","1","2","3","4","5","6","7","8","9","10",
                             "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
                             "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"};
                     String[] arr1 = {"Learn", "Not Learn"};

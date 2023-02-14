@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(@Nullable Context context) {
@@ -65,25 +66,29 @@ public class DBHelper extends SQLiteOpenHelper {
 //        }
 //
 //    }
-//    public User  GetUserAgainstuserName(String userName)
-//    {
-//        SQLiteDatabase MyConn = this.getReadableDatabase();
-//        String sql = "SELECT * FROM User WHERE username="+"userName"+";";
-//        Cursor cursor = MyConn.rawQuery(sql,null);
-//        User user= new User();
-//        if(cursor.moveToFirst())
-//        {
-//            do {
-//                int d = cursor.getInt(0);
-//                String name = cursor.getString(2);
-//                String pass=cursor.getString(1);
-//                user = new User(name,pass);
-//            } while (cursor.moveToNext());
-//        }
-//        cursor.close();
-//        MyConn.close();
-//        return user;
-//    }
+    public ArrayList<DailyDiary> GetAgainstuserName(String StName)
+    {
+        SQLiteDatabase MyConn = this.getReadableDatabase();
+        String sql = "SELECT * FROM Diary WHERE StudentName='"+StName+"';";
+        Cursor cursor = MyConn.rawQuery(sql,null);
+        ArrayList<DailyDiary> dd= new ArrayList<>();;
+        if(cursor.moveToFirst())
+        {
+            do {
+                int aid = cursor.getInt(0);
+                String date= cursor.getString(1);
+                int sabki = cursor.getInt(2);
+                int manzil = cursor.getInt(3);
+                int sabk = cursor.getInt(4);
+                String sta = cursor.getString(5);
+                String name=cursor.getString(6);
+                dd.add(new DailyDiary(date,sabki,manzil,sabk,sta,name));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        MyConn.close();
+        return dd;
+    }
     public void AddStudentRecord(DailyDiary rt) {
         SQLiteDatabase MyConn = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -99,7 +104,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public ArrayList<DailyDiary> Getresult()
     {
         SQLiteDatabase MyConn = this.getReadableDatabase();
-        String sql = "SELECT * FROM Diary";
+        String sql = "SELECT * FROM Diary order by Date DESC";
         Cursor cursor = MyConn.rawQuery(sql,null);
         ArrayList<DailyDiary> resultList = new ArrayList<>();
         if(cursor.moveToFirst()) {
@@ -109,7 +114,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 int sabki = cursor.getInt(2);
                 int manzil = cursor.getInt(3);
                 int sabk = cursor.getInt(4);
-                String sta = cursor.getString(3);
+                String sta = cursor.getString(5);
                 String name=cursor.getString(6);
                 resultList.add(new DailyDiary(date,sabki,manzil,sabk,sta,name));
             } while (cursor.moveToNext());
@@ -155,7 +160,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 int sabki = cursor.getInt(2);
                 int manzil = cursor.getInt(3);
                 int sabk = cursor.getInt(4);
-                String sta = cursor.getString(3);
+                String sta = cursor.getString(5);
                 String name=cursor.getString(6);
                 resultList.add(new DailyDiary(adate,sabki,manzil,sabk,sta,name));
             } while (cursor.moveToNext());

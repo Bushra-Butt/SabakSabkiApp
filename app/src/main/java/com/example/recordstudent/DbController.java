@@ -77,5 +77,9 @@ public class DbController {
             db.AddStudentRecord(dt);
         }
     }
+    public List<DailyDiary> searchByName(String name)
+    {
+        return db.GetAgainstuserName(name);
+    }
 
 }
